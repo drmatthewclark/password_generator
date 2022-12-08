@@ -11,6 +11,7 @@ ascii_chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890`~!
 # generate all utf8 printable characters for use in password, 143680 possibilities
 # not all of them will print on your computer if you don't have all fonts installed
 utf8 = ''.join(tuple(chr(i) for i in range(32, 0x110000) if ( chr(i).isprintable() and not chr(i).isspace() ) ))
+utf8 = utf8[:256] # use only a subset to appease bad programming
 
 use_non_ascii = False    # if true use the extra characters
 spaces_ok = False        # if true, password can contain spaces
